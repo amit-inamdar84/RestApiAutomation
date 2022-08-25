@@ -26,3 +26,12 @@ Maven command for parallel execution in multiple environments:
 mvn clean test -DBASE_URI="https://api.spotify.com" -DACCOUNT_BASE_URI="https://accounts.spotify.com"
 To set the same in IDE, Go to run configuration, select TestNG and test case. Append -DBASE_URI="https://api.spotify.com" -DACCOUNT_BASE_URI="https://accounts.spotify.com"
 in VM arguments.
+
+Jenkins auto trigger options:
+Poll SCM: H/3**** - Check Git every 3 minutes and runs the build.
+Build periodically - H/3**** - Runs a build every 3 minutes even if there are no changes in Git.
+Github web hook trigger - This is the best option as it is inexpensive. Polling will be done only when there is push event. 
+Need to install Github Integration plugin. 
+Download ngrok to expose local jenkins server to internet. Download, extract and go to .exe path in cmd and execute ngrok http 8080
+Add a web hook in Github with the URL provided by ngrok. https://8fce-203-192-241-88.in.ngrok.io/github-webhook/
+Better to make this Jenkins project dependent on application build job when deployment is successful.
