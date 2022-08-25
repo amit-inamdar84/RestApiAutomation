@@ -1,0 +1,28 @@
+Notes for framework only:
+
+1. Identify most common negative test scenarios and automate them. (Useful in interviews)
+
+2. Builder pattern: Make setter methods in pojo to return same class object. Now in test case no need to reference the pojo class 
+object multiple times. 
+
+Lombok: https://projectlombok.org/features/experimental/
+Used to optimize POJO class code by removing getters and setters and handling them internally.
+Need to install dependency and plugin by downloading lombok.jar(from https://projectlombok.org/download) and following instructions
+Lombok can be used with builder pattern and without builder pattern
+Without Builder pattern: Just need to use @Getter and @Setter annotations
+With builder pattern: With @Getter and @Setter annotations, need to use @Builder and @Jacksonized annotations(to make work with Jackson annotations).
+Instead of @Getter and @Setter annotations we can use either @Data or @Value annotations. If we use @Value we can removed private keyword for variables.
+
+Allure reports:
+Link: https://github.com/allure-framework/allure2
+Download and install scoop.
+Install allure in scoop terminal
+Now add allure dependency
+Now in project root folder run this command for HTML reports: allure serve target/allure-results
+
+Maven command to run tests: mvn clean test
+Maven command to generate report: allure serve target/allure-results
+Maven command for parallel execution in multiple environments: 
+mvn clean test -DBASE_URI="https://api.spotify.com" -DACCOUNT_BASE_URI="https://accounts.spotify.com"
+To set the same in IDE, Go to run configuration, select TestNG and test case. Append -DBASE_URI="https://api.spotify.com" -DACCOUNT_BASE_URI="https://accounts.spotify.com"
+in VM arguments.
