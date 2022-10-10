@@ -3,7 +3,7 @@ Notes for framework only:
 1. Identify most common negative test scenarios and automate them. (Useful in interviews)
 
 2. Builder pattern: Make setter methods in pojo to return same class object. Now in test case no need to reference the pojo class 
-object multiple times. 
+object multiple times..
 
 Lombok: https://projectlombok.org/features/experimental/
 Used to optimize POJO class code by removing getters and setters and handling them internally.
