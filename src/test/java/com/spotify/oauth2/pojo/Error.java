@@ -1,4 +1,3 @@
-
 package com.spotify.oauth2.pojo;
 
 import java.util.List;
